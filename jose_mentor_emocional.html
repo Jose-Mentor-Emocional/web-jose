@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José Mentor Emocional | Registros Akáshicos & Coaching Holístico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --deep: #1a0a2e;
+    --violet: #4a1a7a;
+    --gold: #c9a84c;
+    --gold-light: #e8d08a;
+    --cream: #f8f3e8;
+    --soft: #e8e0f0;
+    --white: #ffffff;
+    --text-dark: #1a0a2e;
+    --text-mid: #4a3a5e;
+    --text-light: #9a8aaa;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 40px;
+    background: rgba(26,10,46,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .header-logo img {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+  }
+
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    color: var(--soft); font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; text-decoration: none;
+    transition: color .3s;
+  }
+  nav a:hover { color: var(--gold); }
+
+  .header-cta {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--deep) !important;
+    padding: 10px 20px; border-radius: 40px;
+    font-weight: 600; font-size: 11px !important;
+    letter-spacing: 1.5px; text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+  }
+  .header-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.5); }
+
+  /* ── SECTION 1: HERO ── */
+  #inicio {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('/mnt/user-data/uploads/Sonrisa_y_conexión_emocional.png');
+    background-size: cover; background-position: center top;
+    filter: brightness(0.35) saturate(0.8);
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, rgba(26,10,46,0.7) 0%, rgba(74,26,122,0.4) 50%, rgba(26,10,46,0.8) 100%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center; padding: 120px 40px 80px;
+    max-width: 900px;
+  }
+
+  .hero-logo-top {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 40px rgba(201,168,76,0.5), 0 0 80px rgba(201,168,76,0.2);
+    margin-bottom: 32px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600; line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+
+  .hero-content h1 span { color: var(--gold-light); }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-style: italic; color: rgba(232,208,138,0.9);
+    margin-bottom: 12px; line-height: 1.6;
+  }
+
+  .hero-tagline {
+    font-size: 13px; letter-spacing: 2px;
+    color: rgba(255,255,255,0.7); margin-bottom: 48px;
+    text-transform: uppercase;
+  }
+
+  .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--deep); padding: 16px 32px; border-radius: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600; font-size: 13px; letter-spacing: 1.5px;
+    text-decoration: none; text-transform: uppercase;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.5);
+    transition: transform .3s, box-shadow .3s;
+    display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(201,168,76,0.6); }
+
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.6);
+    color: var(--white); padding: 16px 32px; border-radius: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300; font-size: 13px; letter-spacing: 1.5px;
+    text-decoration: none; text-transform: uppercase;
+    transition: all .3s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--gold); color: var(--gold); }
+
+  /* ── SECTION 2: MÉTODO GEMA ── */
+  #metodo {
+    background: var(--deep);
+    padding: 100px 40px;
+    position: relative; overflow: hidden;
+  }
+
+  #metodo::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74,26,122,0.4) 0%, transparent 70%);
+  }
+
+  .section-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600; line-height: 1.2;
+  }
+
+  #metodo .section-title { color: var(--white); }
+
+  .gema-intro {
+    max-width: 800px; margin: 0 auto 60px; text-align: center;
+  }
+
+  .gema-intro p {
+    font-size: 15px; line-height: 1.9;
+    color: rgba(232,224,240,0.8); margin-top: 20px;
+  }
+
+  .gema-icons {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px; max-width: 900px; margin: 0 auto 70px;
+  }
+
+  .gema-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 20px; padding: 36px 24px;
+    text-align: center;
+    transition: transform .3s, border-color .3s, background .3s;
+  }
+  .gema-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .gema-icon {
+    font-size: 42px; margin-bottom: 16px; display: block;
+  }
+
+  .gema-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--gold-light); margin-bottom: 10px;
+  }
+
+  .gema-card p {
+    font-size: 12px; color: rgba(232,224,240,0.6);
+    letter-spacing: 0.5px; line-height: 1.7;
+  }
+
+  /* Timeline */
+  .timeline-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; color: var(--gold-light);
+    text-align: center; margin-bottom: 50px;
+    font-weight: 400; font-style: italic;
+  }
+
+  .timeline {
+    max-width: 800px; margin: 0 auto;
+    position: relative; padding-left: 20px;
+  }
+
+  .timeline::before {
+    content: ''; position: absolute;
+    left: 50px; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  }
+
+  .timeline-item {
+    display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start;
+  }
+
+  .timeline-day {
+    min-width: 80px; text-align: center;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--deep); border-radius: 50px;
+    padding: 10px 16px;
+    font-weight: 700; font-size: 12px; letter-spacing: 1px;
+    position: relative; z-index: 1;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    flex-shrink: 0;
+  }
+
+  .timeline-content {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 16px; padding: 24px;
+    flex: 1;
+    transition: border-color .3s;
+  }
+  .timeline-content:hover { border-color: rgba(201,168,76,0.4); }
+
+  .timeline-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold); font-size: 1rem; margin-bottom: 8px;
+  }
+
+  .timeline-content p {
+    font-size: 13px; color: rgba(232,224,240,0.7); line-height: 1.7;
+  }
+
+  .gema-cta { text-align: center; margin-top: 60px; }
+
+  .gema-price-note {
+    font-size: 12px; color: rgba(232,224,240,0.5);
+    margin-top: 16px; letter-spacing: 1px;
+  }
+
+  .hashtags { margin-top: 24px; }
+  .hashtags span {
+    font-size: 11px; color: var(--gold); letter-spacing: 1px;
+    margin-right: 12px; opacity: 0.7;
+  }
+
+  /* ── SECTION 3: SOBRE MÍ ── */
+  #sobre {
+    background: var(--cream);
+    padding: 100px 40px;
+  }
+
+  .sobre-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; max-width: 1100px; margin: 0 auto;
+    align-items: start;
+  }
+
+  .sobre-image-wrap {
+    position: relative;
+  }
+
+  .sobre-image-wrap img.sobre-photo {
+    width: 100%; border-radius: 20px;
+    object-fit: cover; height: 500px;
+    filter: saturate(0.9);
+    box-shadow: 20px 20px 60px rgba(74,26,122,0.2);
+  }
+
+  .sobre-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: linear-gradient(135deg, var(--violet), var(--deep));
+    color: var(--gold-light);
+    border: 2px solid var(--gold);
+    border-radius: 16px; padding: 20px 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px; line-height: 1.5;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(26,10,46,0.4);
+  }
+
+  .sobre-text .section-label { color: var(--violet); }
+  .sobre-text .section-title { color: var(--deep); margin-bottom: 24px; }
+
+  .sobre-text p {
+    font-size: 14px; line-height: 2; color: var(--text-mid);
+    margin-bottom: 20px;
+  }
+
+  .certs {
+    display: flex; flex-direction: column; gap: 12px; margin: 24px 0;
+  }
+
+  .cert-item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 12px; color: var(--text-mid); letter-spacing: 0.5px;
+  }
+
+  .cert-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold); flex-shrink: 0;
+  }
+
+  /* Gallery */
+  .gallery-section { margin-top: 60px; }
+
+  .gallery-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; color: var(--violet);
+    text-align: center; margin-bottom: 8px;
+    font-style: italic;
+  }
+
+  .gallery-subtitle {
+    font-size: 12px; color: var(--text-light);
+    text-align: center; margin-bottom: 36px; letter-spacing: 1px;
+  }
+
+  .gallery-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; max-width: 900px; margin: 0 auto;
+  }
+
+  .gallery-item { position: relative; border-radius: 16px; overflow: hidden; }
+
+  .gallery-item img {
+    width: 100%; height: 320px; object-fit: cover;
+    transition: transform .5s;
+    display: block;
+  }
+  .gallery-item:hover img { transform: scale(1.05); }
+
+  .gallery-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(26,10,46,0.85));
+    padding: 30px 20px 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px; font-style: italic;
+    color: var(--gold-light); line-height: 1.5;
+  }
+
+  /* ── SECTION 4: BLOG ── */
+  #blog {
+    background: linear-gradient(160deg, var(--deep) 0%, #2a1050 100%);
+    padding: 100px 40px;
+    position: relative; overflow: hidden;
+  }
+
+  #blog::after {
+    content: '∞';
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 600px; color: rgba(255,255,255,0.015);
+    font-family: serif; pointer-events: none; user-select: none;
+  }
+
+  .blog-container { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+
+  #blog .section-label { color: var(--gold); }
+  #blog .section-title { color: var(--white); margin-bottom: 40px; }
+
+  .blog-article h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; color: var(--gold-light);
+    margin: 36px 0 16px; font-weight: 600;
+  }
+
+  .blog-article p {
+    font-size: 14px; line-height: 2;
+    color: rgba(232,224,240,0.8); margin-bottom: 20px;
+  }
+
+  .blog-list {
+    list-style: none; margin: 20px 0 30px 0;
+  }
+
+  .blog-list li {
+    font-size: 14px; color: rgba(232,224,240,0.8);
+    padding: 10px 0 10px 28px;
+    position: relative; line-height: 1.7;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .blog-list li::before {
+    content: '◈'; position: absolute; left: 0;
+    color: var(--gold); font-size: 12px; top: 12px;
+  }
+
+  .blog-ordered {
+    counter-reset: blog-counter;
+    list-style: none; margin: 20px 0 30px 0;
+  }
+
+  .blog-ordered li {
+    counter-increment: blog-counter;
+    font-size: 14px; color: rgba(232,224,240,0.8);
+    padding: 14px 0 14px 48px; position: relative;
+    line-height: 1.7; border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .blog-ordered li::before {
+    content: counter(blog-counter);
+    position: absolute; left: 0; top: 10px;
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--deep); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px;
+  }
+
+  .blog-divider {
+    border: none; border-top: 1px solid rgba(201,168,76,0.2);
+    margin: 40px 0;
+  }
+
+  .blog-cta-box {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 20px; padding: 40px;
+    text-align: center; margin-top: 40px;
+  }
+
+  .blog-cta-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-style: italic;
+    color: var(--gold-light); margin-bottom: 24px;
+  }
+
+  .seo-tags {
+    margin-top: 30px; font-size: 11px;
+    color: rgba(255,255,255,0.3); letter-spacing: 1px;
+  }
+
+  /* ── SECTION 5: TESTIMONIOS ── */
+  #testimonios {
+    background: var(--cream);
+    padding: 100px 40px;
+  }
+
+  #testimonios .section-label { color: var(--violet); }
+  #testimonios .section-title { color: var(--deep); text-align: center; margin-bottom: 60px; }
+
+  .carousel { max-width: 800px; margin: 0 auto; position: relative; }
+
+  .carousel-track {
+    overflow: hidden; border-radius: 24px;
+  }
+
+  .carousel-slides { display: flex; transition: transform .6s cubic-bezier(0.4,0,0.2,1); }
+
+  .testimonial-slide {
+    min-width: 100%;
+    background: linear-gradient(160deg, var(--deep) 0%, #2a1050 100%);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 24px; padding: 60px 50px;
+    text-align: center; position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-slide::before {
+    content: '"';
+    position: absolute; top: 10px; left: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px; color: rgba(201,168,76,0.1);
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-style: italic;
+    color: var(--white); line-height: 1.8;
+    margin-bottom: 32px; position: relative; z-index: 1;
+  }
+
+  .testimonial-stars { color: var(--gold); font-size: 18px; margin-bottom: 20px; }
+
+  .testimonial-author {
+    font-size: 11px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+  }
+
+  .carousel-dots {
+    display: flex; justify-content: center; gap: 10px; margin-top: 30px;
+  }
+
+  .carousel-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(74,26,122,0.3); cursor: pointer;
+    transition: all .3s; border: none;
+  }
+  .carousel-dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+
+  .carousel-arrows {
+    display: flex; justify-content: center; gap: 16px; margin-top: 20px;
+  }
+
+  .carousel-btn {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid rgba(74,26,122,0.4);
+    background: transparent; cursor: pointer;
+    color: var(--violet); font-size: 18px;
+    transition: all .3s; display: flex; align-items: center; justify-content: center;
+  }
+  .carousel-btn:hover { background: var(--violet); color: var(--white); border-color: var(--violet); }
+
+  /* ── SECTION 6: CONTACTO ── */
+  #contacto {
+    background: var(--deep);
+    padding: 100px 40px;
+  }
+
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; max-width: 1100px; margin: 0 auto;
+  }
+
+  #contacto .section-label { color: var(--gold); }
+  #contacto .section-title { color: var(--white); margin-bottom: 24px; }
+
+  .contact-info p {
+    font-size: 14px; color: rgba(232,224,240,0.7);
+    line-height: 2; margin-bottom: 30px;
+  }
+
+  .contact-detail {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 16px; font-size: 13px;
+    color: rgba(232,224,240,0.7);
+  }
+
+  .contact-detail span:first-child { font-size: 20px; }
+
+  .contact-form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 24px; padding: 40px;
+  }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-group label {
+    display: block; font-size: 10px;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.2); border-radius: 12px;
+    padding: 14px 18px; color: var(--white);
+    font-family: 'Josefin Sans', sans-serif; font-size: 13px;
+    transition: border-color .3s; outline: none;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+  }
+
+  .form-group select option { background: var(--deep); color: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .btn-submit {
+    width: 100%; padding: 18px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--deep); border: none; border-radius: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; cursor: pointer;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+    transition: transform .3s, box-shadow .3s;
+  }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(201,168,76,0.5); }
+
+  .form-success {
+    display: none; text-align: center; padding: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--gold-light);
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0d0520;
+    padding: 60px 40px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .footer-logo img {
+    width: 120px; height: 120px;
+    border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--gold);
+    margin-bottom: 24px;
+    opacity: 0.9;
+  }
+
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1rem;
+    color: var(--gold-light); margin-bottom: 30px;
+  }
+
+  .social-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 30px; }
+
+  .social-link {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); text-decoration: none; font-size: 16px;
+    transition: all .3s;
+  }
+  .social-link:hover { background: var(--gold); color: var(--deep); border-color: var(--gold); }
+
+  .footer-cta-btn {
+    display: inline-block;
+    background: rgba(37,179,80,0.15);
+    border: 1px solid rgba(37,179,80,0.4);
+    color: #4ade80; padding: 14px 32px;
+    border-radius: 50px; text-decoration: none;
+    font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 30px;
+    transition: all .3s;
+  }
+  .footer-cta-btn:hover { background: rgba(37,179,80,0.3); }
+
+  .footer-legal {
+    font-size: 10px; color: rgba(255,255,255,0.2);
+    letter-spacing: 0.5px; line-height: 1.8;
+    max-width: 600px; margin: 0 auto 20px;
+  }
+
+  .footer-copy {
+    font-size: 10px; color: rgba(255,255,255,0.15); letter-spacing: 1px;
+  }
+
+  /* ── FLOATING WHATSAPP ── */
+  .whatsapp-float {
+    position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #25D366;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+    text-decoration: none; color: white; font-size: 28px;
+    transition: transform .3s, box-shadow .3s;
+    animation: pulse-wa 2s ease-in-out infinite;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(37,211,102,0.7); }
+
+  @keyframes pulse-wa {
+    0%,100% { box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
+    50% { box-shadow: 0 8px 50px rgba(37,211,102,0.8); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    header { padding: 10px 20px; }
+    nav { display: none; }
+    .sobre-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-content { padding: 100px 20px 60px; }
+    .testimonial-slide { padding: 40px 30px; }
+    .sobre-badge { position: static; margin-top: 20px; display: inline-block; }
+  }
+
+  /* ── LANG SWITCHER ── */
+  .lang-switcher {
+    display: flex; gap: 6px; align-items: center;
+  }
+
+  .lang-btn {
+    font-size: 10px; letter-spacing: 1px;
+    padding: 4px 10px; border-radius: 20px;
+    border: 1px solid rgba(201,168,76,0.3);
+    background: transparent; color: rgba(255,255,255,0.5);
+    cursor: pointer; transition: all .2s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: rgba(201,168,76,0.2); color: var(--gold); border-color: var(--gold);
+  }
+
+  /* ── SCROLL FADE ── */
+  .fade-in {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-logo">
+    <img src="/mnt/user-data/uploads/Nuevo_logo_Mentor_con_cara.png" alt="José Mentor Emocional">
+  </div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#metodo">Método GEMA</a>
+    <a href="#sobre">Sobre Mí</a>
+    <a href="#blog">Blog</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <div class="lang-switcher">
+      <button class="lang-btn active">ES</button>
+      <button class="lang-btn">EN</button>
+    </div>
+    <a href="https://paypal.me/josementoremocional/40" target="_blank" class="header-cta">Reservar Lectura</a>
+  </div>
+</header>
+
+<!-- SECCIÓN 1: HERO -->
+<section id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="/mnt/user-data/uploads/Nuevo_logo_Mentor_con_cara.png" alt="Logo José Mentor Emocional" class="hero-logo-top">
+    <h1>José Mentor Emocional:<br><span>Especialista en Desbloqueo Emocional</span><br>después de los 40 años.<br>Creador del Método GEMA.</h1>
+    <p class="hero-subtitle">"Escucha a tu Corazón y a tu Alma, y vívelo."</p>
+    <p class="hero-tagline">Transforma patrones limitantes en una vida consciente mediante el Método GEMA</p>
+    <div class="cta-group">
+      <a href="https://paypal.me/josementoremocional/40" target="_blank" class="btn-primary">✨ Reservar Lectura Online (U$S 40)</a>
+      <a href="https://wa.me/5493515528578?text=Hola%20Jose,%20quiero%20informacion" target="_blank" class="btn-secondary">💬 Consultar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: MÉTODO GEMA -->
+<section id="metodo">
+  <div class="gema-intro fade-in">
+    <div class="section-label">La Solución</div>
+    <h2 class="section-title" style="color:var(--white)">El Método GEMA</h2>
+    <p>Un proceso de transformación profunda de 30 días que integra Registros Akáshicos, Coaching y PNL para liberar los patrones que te limitan y reconectar con tu propósito de vida.</p>
+  </div>
+
+  <div class="gema-icons fade-in">
+    <div class="gema-card">
+      <span class="gema-icon">💎</span>
+      <h3>Gestión de Emociones</h3>
+      <p>Aprende a reconocer y gestionar tus emociones con herramientas concretas y profundas.</p>
+    </div>
+    <div class="gema-card">
+      <span class="gema-icon">🔍</span>
+      <h3>Exploración de Patrones</h3>
+      <p>Identifica los patrones limitantes que se repiten sin que lo decidas conscientemente.</p>
+    </div>
+    <div class="gema-card">
+      <span class="gema-icon">🌱</span>
+      <h3>Modificación de Mandatos</h3>
+      <p>Transforma mandatos subconscientes heredados en nuevas creencias liberadoras.</p>
+    </div>
+    <div class="gema-card">
+      <span class="gema-icon">⭐</span>
+      <h3>Autoestima</h3>
+      <p>Fortalece tu amor propio y establece bases sólidas para vivir desde tu autenticidad.</p>
+    </div>
+  </div>
+
+  <p class="timeline-title fade-in">Cronograma del Programa — 30 días de Transformación</p>
+
+  <div class="timeline fade-in">
+    <div class="timeline-item">
+      <div class="timeline-day">DÍA 1</div>
+      <div class="timeline-content">
+        <h4>Fase 1 — Conexión</h4>
+        <p>Identificación de patrones limitantes y respuestas a tus interrogantes en una Lectura de Registros Akáshicos.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-day">DÍA 9</div>
+      <div class="timeline-content">
+        <h4>Fase 2 — Comprensión</h4>
+        <p>Sesión personal de análisis profundo para integrar los aprendizajes de tu alma.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-day">DÍA 16</div>
+      <div class="timeline-content">
+        <h4>Fase 3 — Reprogramación</h4>
+        <p>Cambio de creencias limitantes con técnicas de Coaching y PNL de alto impacto.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-day">DÍA 23</div>
+      <div class="timeline-content">
+        <h4>Fase 4 — Fortalecimiento de Autoestima</h4>
+        <p>Construcción de bases sólidas de amor propio y confianza interior duradera.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-day">DÍA 30</div>
+      <div class="timeline-content">
+        <h4>Fase 5 — Integración y Plan de Acción</h4>
+        <p>Cierre del proceso con un plan concreto para sostener tu transformación en el tiempo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gema-cta fade-in">
+    <a href="https://paypal.me/josementoremocional/250" target="_blank" class="btn-primary" style="font-size:14px; padding:20px 40px;">
+      🌟 Comenzar mi Transformación GEMA (U$S 250)
+    </a>
+    <p class="gema-price-note">Incluye Lectura de Registros Akáshicos + 4 sesiones de Coaching con PNL</p>
+    <div class="hashtags">
+      <span>#terapeutaholístico</span>
+      <span>#SaludMental</span>
+      <span>#Bloqueos</span>
+      <span>#CreenciasLimitantes</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: SOBRE MÍ -->
+<section id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-image-wrap fade-in">
+      <img src="/mnt/user-data/uploads/Sonrisa_y_conexión_emocional.png" alt="José Mentor Emocional" class="sobre-photo">
+      <div class="sobre-badge">
+        ✦ Coach con PNL<br>Certificado<br>✦ Lector Akáshico<br>Nivel 1 & 2
+      </div>
+    </div>
+    <div class="sobre-text fade-in">
+      <div class="section-label">Sobre Mí</div>
+      <h2 class="section-title">Ingeniero de formación,<br>humanista de corazón.</h2>
+      <p>Ayudo a adultos mayores de 40 a soltar culpas y mandatos heredados escuchando a su Alma. Comprendí que repetimos patrones no por azar, sino por mandatos subconscientes.</p>
+      <div class="certs">
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <span>Coach con PNL Certificado por Mauricio Benoist ®</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <span>Certificación Internacional Lector de Registros Akáshicos Nivel 1 y 2</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <span>Método Akashic Healing ® — Akashic Records Readers & Channeling</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <span>Academia Holística — Disciplinas exclusivas</span>
+        </div>
+      </div>
+      <p>La autenticidad es el factor más importante: que sientas comprensión, acompañamiento y confianza. Hoy, la paz del Valle de Punilla inspira mi trabajo siendo la sostenibilidad de la tierra el reflejo de nuestra propia sanación.</p>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--violet);">"Así te ayudo a escuchar a tu alma."</p>
+    </div>
+  </div>
+
+  <div class="gallery-section fade-in">
+    <p class="gallery-title">Conexión Natural</p>
+    <p class="gallery-subtitle">El entorno que inspira la sanación</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="/mnt/user-data/uploads/Montañas_Punilla.jpg" alt="Montañas Valle de Punilla">
+        <div class="gallery-caption">El Valle de Punilla — donde la tierra sostiene el proceso de sanación</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/mnt/user-data/uploads/Polinización_amarilla.jpg" alt="Polinización — expansión natural">
+        <div class="gallery-caption">La polinización y el cuidado de la naturaleza son el reflejo de nuestro propio proceso de sanación y expansión</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 4: BLOG -->
+<section id="blog">
+  <div class="blog-container">
+    <div class="section-label fade-in">Blog</div>
+    <h2 class="section-title fade-in">¿Qué son los Registros Akáshicos?<br>La llave para desbloquear tu propósito después de los 40.</h2>
+
+    <div class="blog-article fade-in">
+      <p>A menudo, al llegar a los 40 años, surge una sensación de repetición. Relaciones que terminan igual, bloqueos heredados o profesionales persistentes, o una angustia que no parece tener una causa en tu presente. Aquí es donde los Registros Akáshicos se convierten en una herramienta de transformación, no de adivinación.</p>
+
+      <h3>La Memoria Energética de tu Alma</h3>
+      <p>Imagina una Biblioteca Universal o una nube de datos cósmica donde se guarda cada pensamiento, palabra y acción de tu existencia. El término "Akasha" proviene del sánscrito y significa "éter" o sustancia primordial, el primer elemento. Acceder a ellos es consultar el libro de tu propia alma para comprender el "por qué" de tus desafíos actuales.</p>
+
+      <h3>¿Por qué buscarlos ahora?</h3>
+      <p>Muchos llegan a una lectura cuando sienten que:</p>
+      <ul class="blog-list">
+        <li><strong>Repiten historias:</strong> Vínculos tóxicos o patrones de escasez.</li>
+        <li><strong>Buscan Misión:</strong> Una necesidad profunda de saber qué vinieron a hacer realmente.</li>
+        <li><strong>Sienten Bloqueos:</strong> Miedos irracionales que no pertenecen a su historia biográfica consciente.</li>
+      </ul>
+
+      <h3>Beneficios de una Lectura Online</h3>
+      <p>Una sesión de Registros Akáshicos con el Método GEMA no predice el futuro; ilumina tu presente. Te permite:</p>
+      <ol class="blog-ordered">
+        <li><strong>Identificar el origen:</strong> Comprender si un bloqueo es un mandato familiar heredado o un aprendizaje pendiente del alma.</li>
+        <li><strong>Sanar vínculos:</strong> Ver a las personas en tu vida desde el contrato espiritual que los une.</li>
+        <li><strong>Tomar decisiones conscientes:</strong> Dejar de reaccionar por instinto y empezar a actuar desde la sabiduría de tu ser.</li>
+      </ol>
+
+      <p>El Amor Incondicional es la clave. No se requiere de rituales complejos, sino de la apertura del corazón para recibir la información que tu alma ya conoce, pero que tu ego ha olvidado.</p>
+
+      <hr class="blog-divider">
+
+      <div class="blog-cta-box">
+        <p>Si sientes que es el momento de dejar de sobrevivir y empezar a vibrar en tu propia frecuencia, te invito a una sesión de descubrimiento.</p>
+        <a href="https://paypal.me/josementoremocional/40" target="_blank" class="btn-primary">👉 Reservar mi Lectura Akáshica (U$S 40)</a>
+      </div>
+
+      <p class="seo-tags">Palabras clave: Registros Akáshicos · Desbloqueo Emocional · Coaching Holístico · Sanación del Alma</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: TESTIMONIOS -->
+<section id="testimonios">
+  <div class="section-label" style="text-align:center; color:var(--violet);">Testimonios</div>
+  <h2 class="section-title fade-in" style="text-align:center; color:var(--deep); font-family:'Cormorant Garamond',serif; font-size:2.5rem; margin-bottom:60px;">Voces que han escuchado su alma</h2>
+
+  <div class="carousel fade-in">
+    <div class="carousel-track">
+      <div class="carousel-slides" id="carouselSlides">
+        <!-- Slide 1 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Acudí a José sintiéndome abrumada y con una gran culpa. Respondió muy rápido y me ofreció una lectura tranquilizadora, reveladora y reconfortante. Me sentí realmente escuchada y comprendida."</p>
+          <div class="testimonial-author">Roxana G. — Buenos Aires</div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Se siente como escuchar a un mentor sabio o a alguien de la familia que comparte sabiduría de vida. La lectura fue detallada, reflexiva y útil."</p>
+          <div class="testimonial-author">Dolores M. — Bariloche</div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Si buscas claridad durante un momento difícil, te recomiendo que trabajes con él."</p>
+          <div class="testimonial-author">Gustavo L. — Mendoza</div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Identifiqué los rígidos mandatos que me bloqueaban y comencé a sanar para sentirme mejor."</p>
+          <div class="testimonial-author">Anselmo D. — Córdoba</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-arrows">
+      <button class="carousel-btn" onclick="moveCarousel(-1)">‹</button>
+      <button class="carousel-btn" onclick="moveCarousel(1)">›</button>
+    </div>
+
+    <div class="carousel-dots" id="carouselDots">
+      <button class="carousel-dot active" onclick="goToSlide(0)"></button>
+      <button class="carousel-dot" onclick="goToSlide(1)"></button>
+      <button class="carousel-dot" onclick="goToSlide(2)"></button>
+      <button class="carousel-dot" onclick="goToSlide(3)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 6: CONTACTO -->
+<section id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info fade-in">
+      <div class="section-label">Contacto</div>
+      <h2 class="section-title">Comienza tu<br>transformación hoy.</h2>
+      <p>"Si sientes curiosidad por este camino o deseas explorar tu proceso personal, será un gusto acompañarte."</p>
+      <div class="contact-detail">
+        <span>📧</span>
+        <a href="mailto:josementoremocional@gmail.com" style="color:var(--gold-light); text-decoration:none;">josementoremocional@gmail.com</a>
+      </div>
+      <div class="contact-detail">
+        <span>📱</span>
+        <span>+54 9 351 552 8578</span>
+      </div>
+      <div class="contact-detail">
+        <span>🌿</span>
+        <span>Valle de Punilla, Córdoba, Argentina</span>
+      </div>
+      <div style="margin-top:30px;">
+        <a href="https://wa.me/5493515528578?text=Hola%20Jose,%20quiero%20informacion" target="_blank" class="btn-primary" style="font-size:12px;">
+          💬 Consultar llamada gratuita vía WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form fade-in">
+      <div id="contactFormContainer">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre Completo *</label>
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp (con código de país) *</label>
+            <input type="tel" id="whatsapp" placeholder="+54 9 ..." required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Correo Electrónico *</label>
+          <input type="email" id="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Servicio de Interés *</label>
+          <select id="servicio" required>
+            <option value="">Selecciona un servicio...</option>
+            <option value="lectura">Lectura de Registros Akáshicos (U$S 40)</option>
+            <option value="gema">Programa GEMA completo (U$S 250)</option>
+            <option value="consulta">Consulta General</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensaje *</label>
+          <textarea id="mensaje" placeholder="Cuéntame qué te trae aquí..." required></textarea>
+        </div>
+        <button class="btn-submit" onclick="handleSubmit()">Enviar mi consulta al Mentor ✨</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <p>✦ ¡Gracias por conectar con tu alma!</p>
+        <p style="font-size:0.9rem; color:rgba(232,208,138,0.7); margin-top:12px; font-family:'Josefin Sans',sans-serif; letter-spacing:1px;">Te responderé en un plazo de 24 a 48 horas hábiles via WhatsApp o correo electrónico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="/mnt/user-data/uploads/Nuevo_logo_Mentor_con_cara.png" alt="José Mentor Emocional">
+  </div>
+  <p class="footer-tagline">"Escucha a tu Corazón y a tu Alma, y vívelo."</p>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/p/José-Mentor-Emocional-100063473093797/" target="_blank" class="social-link" title="Facebook">f</a>
+    <a href="https://instagram.com/josementoremocional" target="_blank" class="social-link" title="Instagram">&#9711;</a>
+    <a href="https://www.linkedin.com/in/jose-daniel-martinez-36601243/" target="_blank" class="social-link" title="LinkedIn">in</a>
+  </div>
+
+  <a href="https://wa.me/5493515528578?text=Hola%20Jose,%20quiero%20informacion" target="_blank" class="footer-cta-btn">
+    💬 Consultar llamada gratuita vía WhatsApp
+  </a>
+
+  <p class="footer-legal">
+    © 2025 José Mentor Emocional · Todos los derechos reservados.<br>
+    Los datos personales recopilados a través de este sitio serán tratados con absoluta confidencialidad, conforme a la Ley 25.326 de Protección de Datos Personales de la República Argentina. No serán compartidos con terceros sin tu consentimiento expreso. Al enviar el formulario, aceptas que José Daniel Martínez utilice tu información exclusivamente para responder a tu consulta y brindarte información sobre sus servicios.
+  </p>
+  <p class="footer-copy">JOSÉ DANIEL MARTÍNEZ · Lector de Registros Akáshicos & Coach con PNL</p>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/5493515528578?text=Hola%20Jose,%20quiero%20reservar%20mi%20llamada%20de%20coaching%20gratuita." target="_blank" class="whatsapp-float" title="Chatear por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 2C8.28 2 2 8.28 2 16c0 2.52.66 4.88 1.82 6.94L2 30l7.26-1.8C11.22 29.36 13.56 30 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5c-2.2 0-4.28-.58-6.08-1.6l-.44-.26-4.54 1.14 1.14-4.44-.28-.46C4.62 20.18 4 18.14 4 16 4 9.38 9.38 4 16 4s12 5.38 12 12-5.38 11.5-12 11.5zm6.58-8.6c-.36-.18-2.12-1.04-2.44-1.16-.32-.12-.56-.18-.8.18-.24.36-.92 1.16-1.12 1.4-.2.24-.42.26-.78.08-.36-.18-1.52-.56-2.9-1.8-1.08-.96-1.8-2.14-2-2.5-.2-.36-.02-.56.16-.74.16-.16.36-.42.54-.62.18-.2.24-.36.36-.6.12-.24.06-.44-.02-.62-.08-.18-.78-1.88-1.08-2.58-.28-.68-.58-.58-.8-.58h-.68c-.24 0-.62.08-.94.44-.32.36-1.22 1.18-1.22 2.88s1.24 3.34 1.42 3.58c.18.24 2.46 3.74 5.94 5.24 3.48 1.5 3.48 1 4.12.94.64-.06 2.08-.84 2.36-1.66.28-.82.28-1.52.2-1.66-.08-.16-.32-.24-.68-.42z"/>
+  </svg>
+</a>
+
+<script>
+  // ── CAROUSEL ──
+  let currentSlide = 0;
+  const totalSlides = 4;
+
+  function updateCarousel() {
+    document.getElementById('carouselSlides').style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  function moveCarousel(dir) {
+    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(i) {
+    currentSlide = i;
+    updateCarousel();
+  }
+
+  setInterval(() => moveCarousel(1), 5000);
+
+  // ── SCROLL FADE ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── FORM SUBMIT ──
+  function handleSubmit() {
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    if (!nombre || !email || !whatsapp || !mensaje) {
+      alert('Por favor completa todos los campos requeridos.');
+      return;
+    }
+
+    document.getElementById('contactFormContainer').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  // ── LANG SWITCHER (demo) ──
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
